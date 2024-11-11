@@ -3,7 +3,6 @@
 
 #define PI (22/7.0f)
 
-#include <SFML/Graphics.hpp>
 
 float Jump(float t, float d)
 {
