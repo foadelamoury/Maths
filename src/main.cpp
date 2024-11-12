@@ -35,7 +35,7 @@ int main()
     shape.setOrigin(center);
     shape.setPosition(window.getSize().x / 2.0f, window.getSize().y / 2.0f);
 
-    updateArc(shape, center, 200, -90, 0);  
+    updateArc(shape, center, 200, -45, 45);  
 
     while (window.isOpen())
     {
