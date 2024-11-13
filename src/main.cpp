@@ -1,36 +1,4 @@
-#include <SFML/Graphics.hpp>
-#include <vector>
-#include <cmath>
-
-class Circle {
-public:
-    sf::CircleShape shape;
-    sf::Vector2f target;
-
-    Circle(float radius, sf::Color color) {
-        shape.setRadius(radius);
-        shape.setFillColor(color);
-        shape.setOrigin(radius, radius);  // Center the circle
-        target = { 0, 0 };
-    }
-
-    void follow(const sf::Vector2f& newTarget, float speed, float minDistance) {
-        target = newTarget;
-        if (distance(shape.getPosition(), target) > minDistance) {
-            shape.setPosition(lerp(shape.getPosition(), target, speed));
-        }
-    }
-
-private:
-    sf::Vector2f lerp(const sf::Vector2f& start, const sf::Vector2f& end, float t) {
-        return start + t * (end - start);
-    }
-
-    float distance(const sf::Vector2f& a, const sf::Vector2f& b) {
-        return std::sqrt((b.x - a.x) * (b.x - a.x) + (b.y - a.y) * (b.y - a.y));
-    }
-};
-
+#include "Circle.h"
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Trailing Day");
     window.setFramerateLimit(60);
