@@ -23,7 +23,7 @@ int main() {
     window.setFramerateLimit(60);
 
     sf::Vector2f linePoints[2] = { {200, 300}, {600, 300} };
-    sf::Vector2f trianglePoints[3] = { {300, 400}, {400, 200}, {500, 400} };
+    sf::Vector2f trianglePoints[3] = { {300, 200}, {400, 200}, {300, 250} };
 
     sf::CircleShape lineCircles[2], triangleCircles[3];
     for (int i = 0; i < 2; ++i) {
